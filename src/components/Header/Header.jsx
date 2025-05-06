@@ -10,7 +10,6 @@ function Header() {
       <img
         src={header_img}
         alt={t('header_img')}
-        loading="lazy"
         decoding="async"
         style={{ aspectRatio: '3 / 1', width: '100%', height: 'auto' }}
       />

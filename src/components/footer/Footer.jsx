@@ -10,9 +10,9 @@ function Footer() {
              <img src={assets.logo} alt="" />
              <p>{t('Choose-from-a-diverse-menu')}</p>
              <div className="footer-social-icons">
-                <img src={assets.facebook_icon} alt="" />
-                <img src={assets.twitter_icon} alt="" />
-                <img src={assets.linkedin_icon} alt="" />
+                <img loading="lazy" src={assets.facebook_icon} alt="" />
+                <img loading="lazy" src={assets.twitter_icon} alt="" />
+                <img loading="lazy" src={assets.linkedin_icon} alt="" />
              </div>
            </div>
            <div className="footer-content-center">

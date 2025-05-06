@@ -22,7 +22,7 @@ const logout = ()=>{
    
   return (
     <div className='navbar'> 
-      <Link to='/'><img src={assets.logo} alt="logo" className='logo' width={100} height={50} /></Link>
+      <Link to='/'><img loading="lazy" src={assets.logo} alt="logo" className='logo' width={100} height={50} /></Link>
 
         <ul className="navbar-menu">
             <Link  to='/' onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>{t('home')}</Link>
@@ -34,12 +34,12 @@ const logout = ()=>{
         <li className='lang-option'  onClick={() => changeLanguage('en')} value="en">Eng</li>
         <li className='lang-option' onClick={() => changeLanguage('uk')} value="uk">ukr</li>
       </ul>
-      <img className='search' src={assets.search_icon} alt='search' width={24} height={24} />
+      <img loading="lazy" className='search' src={assets.search_icon} alt='search' width={24} height={24} />
       <div className="navbar-search-icon">
       {
             getTotalCartAmount() === 0
-              ? <p><img src={assets.basket_icon} alt='basket' width={24} height={24} /></p>
-              : <Link to='/cart'><img src={assets.basket_icon} alt='basket' width={24} height={24} /></Link>
+              ? <p><img loading="lazy" src={assets.basket_icon} alt='basket' width={24} height={24} /></p>
+              : <Link to='/cart'><img loading="lazy" src={assets.basket_icon} alt='basket' width={24} height={24} /></Link>
           }
 
             <div className={getTotalCartAmount()===0?"":"dot"}>
@@ -51,11 +51,11 @@ const logout = ()=>{
           <button className='sign-in' onClick={() => setShowLogin(true)}>{t('Sign-up')}</button>
         ) : (
           <div className='navbar-profile'>
-            <img src={assets.profile_icon} alt="profile" width={30} height={30} />
+            <img loading="lazy" src={assets.profile_icon} alt="profile" width={30} height={30} />
             <ul className="nav-profile-dropdown">
-              <li><img src={assets.bag_icon} alt="orders" width={18} height={18} />{t('orders')}</li>
+              <li><img loading="lazy" src={assets.bag_icon} alt="orders" width={18} height={18} />{t('orders')}</li>
               <hr />
-              <li onClick={logout}><img src={assets.logout_icon} alt="logout" width={18} height={18} />{t('logout')}</li>
+              <li onClick={logout}><img loading="lazy" src={assets.logout_icon} alt="logout" width={18} height={18} />{t('logout')}</li>
             </ul>
           </div>
         )*/}

@@ -46,6 +46,7 @@ const ExploreMenu = ({ category, setCategory, addel }) => {
                             onClick={() => setCategory((prev) => (prev === item.name ? "All" : item.name))}
                         >
                             <img
+                                loading="lazy"
                                 className={category === item.name ? "active" : ""}
                                 src={item.image}
                                 alt={i18n.language === "en" ? item.name : item.name_uk}

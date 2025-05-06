@@ -13,7 +13,8 @@ export const FoodItem = ({ id, name, price, ves, description, image }) => {
     return (
         <div className="food-item" >
             <div className="food-item-img-container">
-                <img className="food-item-image" src={image} alt={name} width="300"
+                <img rel="preload"
+                    as="image" className="food-item-image" src={image} alt={name} width="300"
                     height="200" />
                 {!cartItems[id]
 

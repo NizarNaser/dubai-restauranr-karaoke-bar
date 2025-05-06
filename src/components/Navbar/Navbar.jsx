@@ -22,10 +22,10 @@ const logout = ()=>{
    
   return (
     <div className='navbar'> 
-        <Link to='/dubai-restaurant'><img src={assets.logo} alt="" className='logo'/></Link>
+        <Link to='/'><img src={assets.logo} alt="" className='logo'/></Link>
 
         <ul className="navbar-menu">
-            <Link  to='/dubai-restaurant' onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>{t('home')}</Link>
+            <Link  to='/' onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>{t('home')}</Link>
             <a href='#explore-menu' onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>{t('menu')}</a>
             <a href='#footer'  onClick={()=>setMenu("contact-us")}className={menu==="contact-us"?"active":""}>{t('contact_us')}</a>
         </ul>
@@ -40,7 +40,7 @@ const logout = ()=>{
            ?<p><img src={assets.basket_icon} alt=''/></p>
            
            
-           : <Link to='/dubai-restaurant/cart'><img src={assets.basket_icon} alt=''/></Link>}
+           : <Link to='/cart'><img src={assets.basket_icon} alt=''/></Link>}
 
             <div className={getTotalCartAmount()===0?"":"dot"}>
 

@@ -35,7 +35,7 @@ function Footer() {
 
         </div>
          <hr/>
-         <p className="footer-copyright">Copyright 2024 © https://github.com/NizarNaser/Dubai-restaurant - {t('All-Right-Reserved')}.</p>
+         <p className="footer-copyright">Copyright 2024 © https://nizar-portfolio-gamma.vercel.app/ - {t('All-Right-Reserved')}.</p>
     </div>
   )
 }

@@ -72,6 +72,7 @@ const StoreContextProvider = (props) => {
     useEffect(() => {
 
         async function loadData() {
+            if (loading) return <Loader />;
             await fetchFoodList()
             if (localStorage.getItem("token")) {
                 setToken(localStorage.getItem("token"));
@@ -80,7 +81,7 @@ const StoreContextProvider = (props) => {
         }
         loadData()
     }, [])
-    if (loading) return <Loader />;
+   
     const contextValue = {
         food_list,
         cartItems,

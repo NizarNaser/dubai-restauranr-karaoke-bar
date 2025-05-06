@@ -3,11 +3,12 @@ import { useContext, useState } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
 import { FoodItem } from "../foodItem/FoodItem";
+import Loader from "../Loader/Loader";
 import { useTranslation } from 'react-i18next';
 
 const FoodDisplay = ({ category }) => {
   const { t, i18n } = useTranslation();
-  const { food_list } = useContext(StoreContext);
+  const { food_list, loading } = useContext(StoreContext);
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,45 +33,51 @@ const FoodDisplay = ({ category }) => {
       <h2>{t('Top-dishes-near-you')}</h2>
 
       <div className="food-display-list">
-        {currentItems.map((item, index) => (
-          <FoodItem
-            key={index}
-            id={item._id}
-            name={i18n.language === 'en' ? item.name : item.name_uk}
-            description={i18n.language === 'en' ? item.description : item.description}
-            price={item.price}
-            ves={item.ves}
-            image={item.image}
-          />
-        ))}
+        {loading ? (
+          <Loader />
+        ) : (
+          currentItems.map((item, index) => (
+            <FoodItem
+              key={index}
+              id={item._id}
+              name={i18n.language === 'en' ? item.name : item.name_uk}
+              description={i18n.language === 'en' ? item.description : item.description}
+              price={item.price}
+              ves={item.ves}
+              image={item.image}
+            />
+          ))
+        )}
       </div>
 
       {/* Pagination Controls */}
-      <div className="pagination">
-        <button
-          onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-          disabled={currentPage === 1}
-        >
-          {t('Previous')}
-        </button>
-
-        {[...Array(totalPages)].map((_, index) => (
+      {!loading && totalPages > 1 && (
+        <div className="pagination">
           <button
-            key={index}
-            className={currentPage === index + 1 ? "active-page" : ""}
-            onClick={() => setCurrentPage(index + 1)}
+            onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+            disabled={currentPage === 1}
           >
-            {index + 1}
+            {t('Previous')}
           </button>
-        ))}
 
-        <button
-          onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
-          disabled={currentPage === totalPages}
-        >
-          {t('Next')}
-        </button>
-      </div>
+          {[...Array(totalPages)].map((_, index) => (
+            <button
+              key={index}
+              className={currentPage === index + 1 ? "active-page" : ""}
+              onClick={() => setCurrentPage(index + 1)}
+            >
+              {index + 1}
+            </button>
+          ))}
+
+          <button
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            disabled={currentPage === totalPages}
+          >
+            {t('Next')}
+          </button>
+        </div>
+      )}
     </div>
   );
 };

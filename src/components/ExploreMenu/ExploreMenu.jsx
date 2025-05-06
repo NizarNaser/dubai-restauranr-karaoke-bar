@@ -49,6 +49,8 @@ const ExploreMenu = ({ category, setCategory, addel }) => {
                                 loading="lazy"
                                 className={category === item.name ? "active" : ""}
                                 src={item.image}
+                                width="300" 
+                                height="300"
                                 alt={i18n.language === "en" ? item.name : item.name_uk}
                             />
                             <p>{i18n.language === "en" ? item.name : item.name_uk}</p>

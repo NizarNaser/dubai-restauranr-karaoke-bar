@@ -1,0 +1,23 @@
+.addels{
+
+    max-width: 100%;
+    display: flex;
+    gap: 5px;
+
+}
+.addels button{
+    border: none;
+    color: #fcfbfb;
+    font-weight: 500;
+    margin-top: 0;
+    background-color: rgb(245, 162, 9);
+    font-size: max(1vw,13px);
+    border-radius: 5px;
+    width: 50%;
+    height: 60px;
+    cursor: pointer;
+}
+.addels .active{
+    border: 4px solid tomato;
+    padding: 2px;
+}

@@ -12,7 +12,7 @@ const FoodDisplay = ({ category }) => {
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
+  const itemsPerPage = 25;
 
   // تصفية العناصر حسب الفئة
   const filteredList = food_list.filter(item =>

@@ -26,9 +26,7 @@ const FoodDisplay = ({ category }) => {
 
   // عدد الصفحات الكلي
   const totalPages = Math.ceil(filteredList.length / itemsPerPage);
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [])
+ 
   return (
     <div className="food_display" id="food_display">
       <h3 className="The_bill">{t('The_bill')}</h3>
@@ -73,7 +71,10 @@ const FoodDisplay = ({ category }) => {
           ))}
 
           <button
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            onClick={() => {
+              setCurrentPage(prev => Math.min(prev + 1, totalPages));
+              window.scrollTo(0, 0);
+            }}
             disabled={currentPage === totalPages}
           >
             {t('Next')}

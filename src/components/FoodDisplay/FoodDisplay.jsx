@@ -40,10 +40,10 @@ const FoodDisplay = ({ category }) => {
         {loading ? (
           <Loader />
         ) : (
-          currentItems.map((item, index) => (
+          currentItems.map((item) => (
             <FoodItem
-            key={index}
-            index={index} // مهم لتحسين LCP
+            key={item._id}
+            index={item._id} // مهم لتحسين LCP
             id={item._id}
             name={i18n.language === 'en' ? item.name : item.name_uk}
             description={i18n.language === 'en' ? item.description : item.description}

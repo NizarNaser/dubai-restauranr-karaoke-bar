@@ -13,9 +13,9 @@ export const FoodItem = ({ id, name, price, ves, description, image }) => {
     return (
         <div className="food-item" >
             <div className="food-item-img-container">
-                <img rel="preload"
+                <img rel="preload" 
                     as="image" className="food-item-image" src={image} alt={name} width="300"
-                    height="200" />
+                    height="200" type="image/jpeg"/>
                 {!cartItems[id]
 
                     ? <img loading="lazy" className="add" onClick={() => addToCart(id)} src={assets.add_icon_white} alt={name}

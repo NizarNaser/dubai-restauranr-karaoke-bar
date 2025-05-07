@@ -1,4 +1,4 @@
-import { logo } from "../../assets/assets/logo/webp"
+import { asslets } from "../../assets/assets"
 import "./Footer.css"
 import { useTranslation } from 'react-i18next';
 function Footer() {
@@ -7,7 +7,7 @@ function Footer() {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={logo} alt="logo"  width="150" height="80"/>
+          <img src={assets.logo} alt="logo"  width="150" height="80"/>
           <p>{t('Choose-from-a-diverse-menu')}</p>
           <div className="footer-social-icons">
             <img loading="lazy" src={assets.facebook_icon} alt="" width="45"

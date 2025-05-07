@@ -1,4 +1,4 @@
-import { asslets } from "../../assets/assets"
+import { assets } from "../../assets/assets"
 import "./Footer.css"
 import { useTranslation } from 'react-i18next';
 function Footer() {

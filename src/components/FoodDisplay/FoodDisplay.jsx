@@ -42,14 +42,15 @@ const FoodDisplay = ({ category }) => {
         ) : (
           currentItems.map((item, index) => (
             <FoodItem
-              key={index}
-              id={item._id}
-              name={i18n.language === 'en' ? item.name : item.name_uk}
-              description={i18n.language === 'en' ? item.description : item.description}
-              price={item.price}
-              ves={item.ves}
-              image={item.image}
-            />
+            key={index}
+            index={index} // مهم لتحسين LCP
+            id={item._id}
+            name={i18n.language === 'en' ? item.name : item.name_uk}
+            description={i18n.language === 'en' ? item.description : item.description}
+            price={item.price}
+            ves={item.ves}
+            image={item.image}
+          />
           ))
         )}
       </div>

@@ -40,18 +40,21 @@ const FoodDisplay = ({ category }) => {
         {loading ? (
           <Loader />
         ) : (
-          currentItems.map((item) => (
-            <FoodItem
-            key={item._id}
-            index={item._id} // مهم لتحسين LCP
-            id={item._id}
-            name={i18n.language === 'en' ? item.name : item.name_uk}
-            description={i18n.language === 'en' ? item.description : item.description}
-            price={item.price}
-            ves={item.ves}
-            image={item.image}
-          />
-          ))
+          currentItems.map((item) => {
+            console.log(item); // تحقق من وجود item.ves
+            return (
+              <FoodItem
+                key={item._id}
+                index={item._id}
+                id={item._id}
+                name={i18n.language === 'en' ? item.name : item.name_uk}
+                description={i18n.language === 'en' ? item.description : item.description}
+                price={item.price}
+                ves={item.ves}
+                image={item.image}
+              />
+            );
+          })
         )}
       </div>
 

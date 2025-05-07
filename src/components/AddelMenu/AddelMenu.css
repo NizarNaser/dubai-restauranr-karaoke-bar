@@ -10,7 +10,7 @@
     color: #fcfbfb;
     font-weight: 500;
     margin-top: 0;
-    background-color: rgb(245, 162, 9);
+    background-color: tomato;
     font-size: max(1vw,13px);
     border-radius: 5px;
     width: 50%;
@@ -18,6 +18,6 @@
     cursor: pointer;
 }
 .addels .active{
-    border: 4px solid tomato;
+    border: 4px solid #d45a03;
     padding: 2px;
 }

@@ -7,7 +7,7 @@ function Footer() {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.logo} alt="logo"  width="150" height="80"/>
+          <img src={assets.logo} alt="logo"  width="150" height="80" loading="lazy"/>
           <p>{t('Choose-from-a-diverse-menu')}</p>
           <div className="footer-social-icons">
             <img loading="lazy" src={assets.facebook_icon} alt="" width="45"

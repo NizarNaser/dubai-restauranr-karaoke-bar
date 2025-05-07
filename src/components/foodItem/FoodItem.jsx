@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import "./FoodItem.css";
 import { StoreContext } from "../../context/StoreContext";
 
-export const FoodItem = ({ id, name, price, ves, description, image }) => {
+export const FoodItem = ({ id, name, price, weight, description, image }) => {
   const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
   // تحسين رابط Cloudinary
@@ -64,7 +64,7 @@ export const FoodItem = ({ id, name, price, ves, description, image }) => {
         </div>
         <p className="food-item-desc">{description}</p>
         <p className="food-item-price">&#8372; {price}</p>
-        <p className="food-item-gram">&#9878; {ves ? ves + ' g' : 'no weight'}</p>
+        <p className="food-item-gram">&#9878; {weight}</p>
 
       </div>
     </div>

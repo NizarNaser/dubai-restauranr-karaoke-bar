@@ -50,7 +50,7 @@ const FoodDisplay = ({ category }) => {
               name={i18n.language === 'en' ? item.name : item.name_uk}
               description={i18n.language === 'en' ? item.description : item.description}
               price={item.price}
-              ves={item.ves} // ← هذا السطر
+              ves={item.weight} // ← هذا السطر
               image={item.image}
             />
             );

@@ -26,7 +26,11 @@ const FoodDisplay = ({ category }) => {
 
   // عدد الصفحات الكلي
   const totalPages = Math.ceil(filteredList.length / itemsPerPage);
- 
+  // 🔽 Scroll to top when page changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [currentPage]);
+
   return (
     <div className="food_display" id="food_display">
       <h3 className="The_bill">{t('The_bill')}</h3>
@@ -71,10 +75,7 @@ const FoodDisplay = ({ category }) => {
           ))}
 
           <button
-            onClick={() => {
-              setCurrentPage(prev => Math.min(prev + 1, totalPages));
-              window.scrollTo(0, 0);
-            }}
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages)) }
             disabled={currentPage === totalPages}
           >
             {t('Next')}

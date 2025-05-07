@@ -16,6 +16,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     gap: 80px;
+    min-height: 200px; /* أو حسب محتوى الفوتر */
 }
 .footer-content-left,.footer-content-center,.footer-content-right{
     display: flex;
@@ -28,8 +29,9 @@
   margin-bottom: 10px;
   cursor: pointer;
 }
-.footer-content-left img{
-  width:70%;
+.footer-content-left img {
+  width: 150px;
+  height: auto;
 }
 .footer-content-center h2,.footer-content-right h2{
     color: white;

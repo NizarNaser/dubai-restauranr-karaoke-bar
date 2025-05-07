@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
 import { FoodItem } from "../foodItem/FoodItem";
@@ -26,7 +26,9 @@ const FoodDisplay = ({ category }) => {
 
   // عدد الصفحات الكلي
   const totalPages = Math.ceil(filteredList.length / itemsPerPage);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
   return (
     <div className="food_display" id="food_display">
       <h3 className="The_bill">{t('The_bill')}</h3>

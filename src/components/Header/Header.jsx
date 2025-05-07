@@ -1,5 +1,4 @@
 import "./Header.css";
-import header_img from '/header_img.webp';
 import { useTranslation } from 'react-i18next';
 
 function Header() {
@@ -8,10 +7,11 @@ function Header() {
   return (
     <div className="header">
       <img
-        src={header_img}
+        src="https://res.cloudinary.com/dii3goppc/image/upload/v1746576022/header_img_svudii.webp"
         alt={t('header_img')}
-        decoding="async"
-        style={{ aspectRatio: '3 / 1', width: '100%', height: 'auto' }}
+        rel="preload"
+        as="image"
+        type="image/jpeg"
       />
       <div className="header-contents">
         <h2>{t('Order-your-favourite-food-here')}</h2>

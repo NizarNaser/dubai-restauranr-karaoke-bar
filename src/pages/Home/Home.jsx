@@ -18,15 +18,6 @@ function Home() {
         <meta name="description" content={t('description')} />
         <meta name="keywords" content={t('keywords')} />
         <meta name="robots" content="index, follow" />
-       
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1KFV1NEV6E"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-
-  gtag('config', 'G-1KFV1NEV6E');
-</script>
         <link
   rel="preload"
   as="image"

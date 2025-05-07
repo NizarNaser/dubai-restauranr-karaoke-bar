@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { useContext, useEffect, useState } from "react";
-import React, { Suspense } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
 import { FoodItem } from "../foodItem/FoodItem";
@@ -14,7 +13,7 @@ const FoodDisplay = ({ category }) => {
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
-  const LazyFoodItem = React.lazy(() => import("../foodItem/FoodItem"));
+
   // تصفية العناصر حسب الفئة
   const filteredList = food_list.filter(item =>
     category === "All" || category === item.category
@@ -42,18 +41,15 @@ const FoodDisplay = ({ category }) => {
           <Loader />
         ) : (
           currentItems.map((item, index) => (
-            <Suspense fallback={<Loader />}>
-              <LazyFoodItem
-                key={index}
-                id={item._id}
-                name={i18n.language === 'en' ? item.name : item.name_uk}
-                description={i18n.language === 'en' ? item.description : item.description}
-                price={item.price}
-                ves={item.ves}
-                image={item.image}
-              />
-            </Suspense>
-
+            <FoodItem
+              key={index}
+              id={item._id}
+              name={i18n.language === 'en' ? item.name : item.name_uk}
+              description={i18n.language === 'en' ? item.description : item.description}
+              price={item.price}
+              ves={item.ves}
+              image={item.image}
+            />
           ))
         )}
       </div>
@@ -79,7 +75,7 @@ const FoodDisplay = ({ category }) => {
           ))}
 
           <button
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages)) }
             disabled={currentPage === totalPages}
           >
             {t('Next')}

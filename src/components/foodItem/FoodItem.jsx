@@ -20,7 +20,7 @@ export const FoodItem = ({ id, name, price, ves, description, image, index }) =>
           width="300"
           height="200"
           decoding="async"
-          loading={index === 0 ? "eager" : "lazy"} // تحسين LCP
+          loading="lazy"// تحسين LCP
           style={{ aspectRatio: "3 / 2", objectFit: "cover", borderRadius: "10px" }}
         />
 

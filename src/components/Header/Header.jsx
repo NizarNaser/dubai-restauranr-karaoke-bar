@@ -9,9 +9,8 @@ function Header() {
       <img
         src="https://res.cloudinary.com/dii3goppc/image/upload/v1746576022/header_img_svudii.webp"
         alt={t('header_img')}
-        rel="preload"
-        as="image"
-        type="image/jpeg"
+        decoding="async"
+        style={{ width: "100%", height: "auto", aspectRatio: "3 / 1" }}
       />
       <div className="header-contents">
         <h2>{t('Order-your-favourite-food-here')}</h2>

@@ -64,7 +64,8 @@ export const FoodItem = ({ id, name, price, ves, description, image }) => {
         </div>
         <p className="food-item-desc">{description}</p>
         <p className="food-item-price">&#8372; {price}</p>
-        <p className="food-item-gram">&#9878; {ves}</p>
+        <p className="food-item-gram">&#9878; {ves ? ves + ' g' : 'no weight'}</p>
+
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ const FoodDisplay = ({ category }) => {
           <Loader />
         ) : (
           currentItems.map((item) => {
-            console.log(item.ves); // تحقق من وجود item.ves
+            console.log(item.gram); // تحقق من وجود item.gram
             return (
               <FoodItem
               key={item._id}
@@ -50,7 +50,7 @@ const FoodDisplay = ({ category }) => {
               name={i18n.language === 'en' ? item.name : item.name_uk}
               description={i18n.language === 'en' ? item.description : item.description}
               price={item.price}
-              ves={item.weight} // ← هذا السطر
+              gram={item.gram} // ← هذا السطر
               image={item.image}
             />
             );

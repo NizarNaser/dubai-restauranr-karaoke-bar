@@ -18,6 +18,12 @@ function Home() {
         <meta name="description" content={t('description')} />
         <meta name="keywords" content={t('keywords')} />
         <meta name="robots" content="index, follow" />
+        <link
+  rel="preload"
+  as="image"
+  href="https://res.cloudinary.com/dii3goppc/image/upload/v1746576022/header_img_svudii.webp"
+  type="image/webp"
+/>
       </Helmet>
         <Header/>
         <AddelMenu addel={addel} setAddel={setAddel} />

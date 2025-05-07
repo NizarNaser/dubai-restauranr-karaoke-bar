@@ -13,22 +13,49 @@ export const FoodItem = ({ id, name, price, ves, description, image }) => {
     return (
         <div className="food-item" >
             <div className="food-item-img-container">
-                <img rel="preload" 
-                    as="image" className="food-item-image" src={image} alt={name} width="300"
-                    height="200" type="image/jpeg"/>
+                <img
+                    rel="preload"
+                    as="image"
+                    className="food-item-image"
+                    src={image}
+                    alt={name}
+                    width="300"
+                    height="200"
+                    decoding="async"
+                    loading="eager"
+                    style={{ aspectRatio: "3 / 2", objectFit: "cover" }}
+                />
                 {!cartItems[id]
 
-                    ? <img loading="lazy" className="add" onClick={() => addToCart(id)} src={assets.add_icon_white} alt={name}
+                    ? <img
+                        loading="lazy"
+                        className="add"
+                        onClick={() => addToCart(id)}
+                        src={assets.add_icon_white}
+                        alt="Add to cart"
                         width="35"
-                        height="35" />
+                        height="35"
+                    />
                     : <div className="food-item-counter">
-                        <img onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt={name}
+                        <img
+                            loading="lazy"
+
+                            onClick={() => removeFromCart(id)}
+                            src={assets.remove_icon_red}
+                            alt="remove from Cart"
                             width="35"
-                            height="35" />
+                            height="35"
+                        />
                         <p>{cartItems[id]}</p>
-                        <img onClick={() => addToCart(id)} src={assets.add_icon_green} alt={name}
+                        <img
+                            loading="lazy"
+
+                            onClick={() => addToCart(id)}
+                            src={assets.add_icon_green}
+                            alt="Add to cart"
                             width="35"
-                            height="35" />
+                            height="35"
+                        />
 
                     </div>
 

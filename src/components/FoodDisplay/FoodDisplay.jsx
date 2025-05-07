@@ -41,18 +41,18 @@ const FoodDisplay = ({ category }) => {
           <Loader />
         ) : (
           currentItems.map((item) => {
-            console.log(item); // تحقق من وجود item.ves
+            console.log(item.ves); // تحقق من وجود item.ves
             return (
               <FoodItem
-                key={item._id}
-                index={item._id}
-                id={item._id}
-                name={i18n.language === 'en' ? item.name : item.name_uk}
-                description={i18n.language === 'en' ? item.description : item.description}
-                price={item.price}
-                ves={item.ves}
-                image={item.image}
-              />
+              key={item._id}
+              index={item._id}
+              id={item._id}
+              name={i18n.language === 'en' ? item.name : item.name_uk}
+              description={i18n.language === 'en' ? item.description : item.description}
+              price={item.price}
+              ves={item.ves} // ← هذا السطر
+              image={item.image}
+            />
             );
           })
         )}

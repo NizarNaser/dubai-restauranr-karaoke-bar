@@ -28,7 +28,7 @@ const FoodDisplay = ({ category }) => {
   const totalPages = Math.ceil(filteredList.length / itemsPerPage);
   // 🔽 Scroll to top when page changes
   useEffect(() => {
-    window.scrollTo({ top: 300, behavior: "smooth" });
+    window.scrollTo({ top: 280, behavior: "smooth" });
   }, [currentPage]);
 
   return (

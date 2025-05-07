@@ -1,150 +1,154 @@
-.navbar{
+.navbar {
     padding: 20px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ffffff; /* خلفية فاتحة */
 }
-.navbar .logo{
-  width: 150px;
+.navbar .logo {
+    width: 150px;
 }
-.navbar-menu{
+.navbar-menu {
     display: flex;
     list-style: none;
     gap: 20px;
-    color: #49557e;
+    color: #333; /* لون نص داكن */
     font-size: 18px;
 }
-.navbar-right{
+.navbar-menu a,
+.navbar-menu li {
+    text-decoration: none;
+    color: #333; /* لون نص داكن لزيادة التباين */
+}
+.navbar-menu .active {
+    padding: 2px;
+    border-bottom: 2px solid #49557e;
+}
+.navbar-right {
     display: flex;
     align-items: center;
     gap: 40px;
 }
-.navbar-right .lang-select{
+.navbar-right .lang-select {
     display: flex;
     gap: 5px;
     list-style-type: none;
 }
-.navbar-right .lang-option{
-   background: chocolate;
-   color: aliceblue;padding: 7px 10px;
-   border-radius: 5px;
-
+.navbar-right .lang-option {
+    background-color: #FF8C00; /* خلفية برتقالية داكنة */
+    color: #fff; /* نص أبيض لزيادة التباين */
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
-.navbar-right .search{
+.navbar-right .lang-option:hover {
+    background-color: #ff6a00; /* خلفية داكنة عند التحويم */
+}
+.navbar-right .search {
     display: none;
 }
-.navbar button{
+.navbar button {
     background: transparent;
     font-size: 16px;
     color: #49557e;
-    border: 1px solid tomato;
+    border: 1px solid #FF6347; /* لون أحمر داكن */
     padding: 10px 30px;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
-    
 }
-.navbar button:hover{
-    background-color: #fff4f2;
+.navbar button:hover {
+    background-color: #FFF4F2; /* خلفية فاتحة عند التحويم */
 }
-.navbar .active{
-    padding: 2px;
-    border-bottom: 2px solid #49557e;
-}
-.navbar li:hover{
-    cursor: pointer;
-}
-.navbar-search-icon{
+.navbar-search-icon {
     position: relative;
-    
 }
-.navbar-search-icon .dot{
+.navbar-search-icon .dot {
     position: absolute;
     min-width: 10px;
     min-height: 10px;
-    background-color: tomato;
-    border-radius: 5px;
+    background-color: #FF6347; /* لون أحمر داكن للتنبيه */
+    border-radius: 50%;
     top: -8px;
     right: -8px;
 }
 
 @media (max-width:1050px) {
-    .navbar .logo{
+    .navbar .logo {
         width: 140px;
     }
-    .navbar-menu{
+    .navbar-menu {
         gap: 20px;
         font-size: 17px;
     }
-    .navbar-right{
-        gap:30px;
+    .navbar-right {
+        gap: 30px;
     }
-    .navbar-right img{
+    .navbar-right img {
         width: 22px;
     }
-    .navbar-right button{
+    .navbar-right button {
         padding: 8px 25px;
         display: none;
     }
 }
 
 @media (max-width:900px) {
-    .navbar .logo{
+    .navbar .logo {
         width: 120px;
     }
-    .navbar-menu{
+    .navbar-menu {
         gap: 15px;
         font-size: 16px;
     }
-    .navbar-right{
-        gap:20px;
+    .navbar-right {
+        gap: 20px;
     }
-    .navbar-right img{
+    .navbar-right img {
         width: 20px;
     }
-    .navbar-right button{
+    .navbar-right button {
         padding: 7px 20px;
         font-size: 15px;
     }
 }
 
-.navbar-profile{
+.navbar-profile {
     position: relative;
 }
 
-.nav-profile-dropdown{
+.nav-profile-dropdown {
     position: absolute;
     display: none;
     right: 0;
     z-index: 1;
 }
-.navbar-profile:hover .nav-profile-dropdown{
+.navbar-profile:hover .nav-profile-dropdown {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: #fff2ef;
+    background-color: #FFF2EF; /* خلفية فاتحة */
     padding: 12px 25px;
     border-radius: 4px;
-    border: 1px solid tomato;
+    border: 1px solid #FF6347; /* حدود حمراء داكنة */
     outline: 2px solid white;
     list-style: none;
 }
-.nav-profile-dropdown li{
+.nav-profile-dropdown li {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
 }
-.nav-profile-dropdown img{
+.nav-profile-dropdown img {
     width: 20px;
 }
-.nav-profile-dropdown li:hover{
-    color: tomato;
+.nav-profile-dropdown li:hover {
+    color: #FF6347; /* لون أحمر داكن عند التحويم */
 }
+
 @media (max-width:750px) {
-  
-    .navbar-menu{
+    .navbar-menu {
         display: none;
     }
-
 }

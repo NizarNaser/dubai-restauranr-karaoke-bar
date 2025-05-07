@@ -35,14 +35,14 @@
     list-style-type: none;
 }
 .navbar-right .lang-option {
-    background-color: #FF8C00; /* خلفية برتقالية داكنة */
+    background-color: tomato; /* خلفية برتقالية داكنة */
     color: #fff; /* نص أبيض لزيادة التباين */
     padding: 7px 10px;
     border-radius: 5px;
     cursor: pointer;
 }
 .navbar-right .lang-option:hover {
-    background-color: #ff6a00; /* خلفية داكنة عند التحويم */
+    background-color: #d45a03; /* خلفية داكنة عند التحويم */
 }
 .navbar-right .search {
     display: none;

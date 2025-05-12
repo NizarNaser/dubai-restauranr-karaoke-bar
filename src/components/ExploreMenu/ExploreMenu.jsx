@@ -1,18 +1,18 @@
 import "./ExploreMenu.css";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import Loader from "../../components/Loader/Loader";
+import { StoreContext } from "../../context/StoreContext";
+import Loader from "../Loader/Loader";
 
 const ExploreMenu = ({ category, setCategory, addel }) => {
     const { i18n } = useTranslation();
     const [cat_list, setCatList] = useState([]);
-    const [loading, setLoading] = useState(true);
-
+    const { setLoading, loading } = useContext(StoreContext);
     const url = import.meta.env.VITE_API_URL;
 
-    const fetchList = async () => {
+    const fetchList = async () => { 
         try {
             const response = await axios.get(`${url}/api/cat/list-cat`);
             if (response.data.success) {
@@ -34,11 +34,11 @@ const ExploreMenu = ({ category, setCategory, addel }) => {
         fetchList();
        
     }, []);
-    if (loading) return <Loader />;
     return (
         <div className="explore-menu" id="explore-menu">
             <div className="explore-menu-list">
-                {cat_list.length > 0 && cat_list[0].hasOwnProperty("addel") ? (
+                {loading ? <Loader /> : (
+                cat_list.length > 0 && cat_list[0].hasOwnProperty("addel") ? (
                     cat_list.filter(item => item.addel === addel).map((item, index) => (
                         <div
                             key={index}
@@ -58,7 +58,7 @@ const ExploreMenu = ({ category, setCategory, addel }) => {
                     ))
                 ) : (
                     <p>No categories found or 'addel' is missing</p>
-                )}
+                ))}
             </div>
             <hr />
         </div>

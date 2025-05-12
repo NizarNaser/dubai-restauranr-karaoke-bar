@@ -29,7 +29,7 @@ const logout = ()=>{
             <a href='#explore-menu' onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>{t('menu')}</a>
             <a href='#footer'  onClick={()=>setMenu("contact-us")}className={menu==="contact-us"?"active":""}>{t('contact_us')}</a>
         </ul>
-        <div className='navbar-right'>
+        <div className='navbar-right'> 
         <ul className='lang-select' >
         <li className='lang-option'  onClick={() => changeLanguage('en')} value="en">Eng</li>
         <li className='lang-option' onClick={() => changeLanguage('uk')} value="uk">ukr</li>

@@ -9,7 +9,7 @@ import LoginPopup from "./components/loginPopup/LoginPopup"
 
 
 
-function App() {
+function App() { 
 
   const [showLogin,setShowLogin] = useState(false)
   return (

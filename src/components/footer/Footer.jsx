@@ -16,7 +16,7 @@ function Footer() {
               height="45" />
             <img loading="lazy" src={assets.linkedin_icon} alt="" width="45"
               height="45" />
-          </div>
+          </div> 
         </div>
         <div className="footer-content-center">
           <h2>{t('COMPANY')}</h2>

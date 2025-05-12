@@ -27,7 +27,7 @@
 .footer-content-left li,.footer-content-center li,.footer-content-right li{
   list-style: none;
   margin-bottom: 10px;
-  cursor: pointer;
+  cursor: pointer; 
 }
 .footer-content-left img {
   width: 150px;

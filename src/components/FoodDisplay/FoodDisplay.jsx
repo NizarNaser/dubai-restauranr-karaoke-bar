@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next';
 const FoodDisplay = ({ category }) => {
   const { t, i18n } = useTranslation();
   const { food_list, loading } = useContext(StoreContext);
-
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;

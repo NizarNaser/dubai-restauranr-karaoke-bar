@@ -1,7 +1,6 @@
 import "./AddelMenu.css"
 import { addel_list } from "../../assets/assets";
 import { useTranslation } from 'react-i18next';
-// eslint-disable-next-line react/prop-types
 const ExploreMenu = ({addel,setAddel}) => {
     const {i18n } = useTranslation();
     return (

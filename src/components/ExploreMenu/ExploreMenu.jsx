@@ -12,7 +12,7 @@ const ExploreMenu = ({ category, setCategory, addel }) => {
     const { setLoading, loading } = useContext(StoreContext);
     const url = import.meta.env.VITE_API_URL;
 
-    const fetchList = async () => { 
+    const fetchList = async () => {
         try {
             const response = await axios.get(`${url}/api/cat/list-cat`);
             if (response.data.success) {

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useContext, useEffect, useState } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
@@ -6,12 +5,10 @@ import { FoodItem } from "../foodItem/FoodItem";
 import Loader from "../Loader/Loader";
 import { useTranslation } from 'react-i18next';
 
-const FoodDisplay = ({ category }) => {
+const FoodDisplay = ({ category, currentPage, setCurrentPage }) => {
   const { t, i18n } = useTranslation();
   const { food_list, loading } = useContext(StoreContext);
-  // Pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 12;
+  const itemsPerPage = 22;
 
   // تصفية العناصر حسب الفئة
   const filteredList = food_list.filter(item =>
@@ -23,9 +20,8 @@ const FoodDisplay = ({ category }) => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = filteredList.slice(indexOfFirstItem, indexOfLastItem);
 
-  // عدد الصفحات الكلي
   const totalPages = Math.ceil(filteredList.length / itemsPerPage);
-  // 🔽 Scroll to top when page changes
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
@@ -40,18 +36,17 @@ const FoodDisplay = ({ category }) => {
           <Loader />
         ) : (
           currentItems.map((item) => {
-            console.log(item.gram); // تحقق من وجود item.gram
             return (
               <FoodItem
-              key={item._id}
-              index={item._id}
-              id={item._id}
-              name={i18n.language === 'en' ? item.name : item.name_uk}
-              description={i18n.language === 'en' ? item.description : item.description}
-              price={item.price}
-              gram={item.gram} // ← هذا السطر
-              image={item.image}
-            />
+                key={item._id}
+                index={item._id}
+                id={item._id}
+                name={i18n.language === 'en' ? item.name : item.name_uk}
+                description={i18n.language === 'en' ? item.description : item.description_uk}
+                price={item.price}
+                gram={item.gram || ""}
+                image={item.image}
+              />
             );
           })
         )}
@@ -78,7 +73,7 @@ const FoodDisplay = ({ category }) => {
           ))}
 
           <button
-            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages)) }
+            onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
             disabled={currentPage === totalPages}
           >
             {t('Next')}
